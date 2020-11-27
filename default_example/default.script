@@ -1,0 +1,34 @@
+local acidrain = require('acidrain.acidrain')
+
+function init(self)
+	self.emitter = acidrain.create({
+		factory = {
+			url = "/go#factory",
+			sprite_id = "sprite",
+		},
+		emitter = {
+			parent_space = true,
+		}
+	})
+	self.emitter.start()
+end
+
+function final(self)
+
+end
+
+function update(self, dt)
+	self.emitter.update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+
+end
+
+function on_input(self, action_id, action)
+
+end
+
+function on_reload(self)
+
+end

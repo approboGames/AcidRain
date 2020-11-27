@@ -1,0 +1,73 @@
+local acidrain = require('acidrain.acidrain')
+local emitters = require('advanced_example.emitters')
+
+local function load_emitter(self, new_emitter)
+	self.emitter.stop()
+	self.emitter.clean()
+	self.emitter = nil
+
+	self.emitter = new_emitter
+	self.emitter.start()
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.emitter = emitters.emitter_point()
+	self.emitter.start()
+end
+
+function update(self, dt)
+	if self.emitter then
+		self.emitter.update(dt)
+	end
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("key-enter") and action.pressed then
+		msg.post("@system:", "toggle_physics_debug")
+	elseif action_id == hash("key-a") and action.pressed then
+		load_emitter(self, emitters.emitter_point())
+	elseif action_id == hash("key-b") and action.pressed then
+		load_emitter(self, emitters.emitter_rectangle())
+	elseif action_id == hash("key-c") and action.pressed then
+		load_emitter(self, emitters.emitter_ellipse())
+	elseif action_id == hash("key-d") and action.pressed then
+		load_emitter(self, emitters.emitter_rectangle_edge())
+	elseif action_id == hash("key-e") and action.pressed then
+		load_emitter(self, emitters.emitter_ellipse_edge())
+	elseif action_id == hash("key-f") and action.pressed then
+		load_emitter(self, emitters.emitter_angle())
+	elseif action_id == hash("key-g") and action.pressed then
+		load_emitter(self, emitters.emitter_angle_seq())
+	elseif action_id == hash("key-h") and action.pressed then
+		load_emitter(self, emitters.emitter_to_target())
+	elseif action_id == hash("key-i") and action.pressed then
+		load_emitter(self, emitters.emitter_from_target())
+	elseif action_id == hash("key-j") and action.pressed then
+		load_emitter(self, emitters.emitter_custom_func())
+	elseif action_id == hash("key-k") and action.pressed then
+		load_emitter(self, emitters.emitter_inout_easing())
+	elseif action_id == hash("key-l") and action.pressed then
+		load_emitter(self, emitters.emitter_multiple_per_emit())
+	elseif action_id == hash("key-m") and action.pressed then
+		load_emitter(self, emitters.emitter_animation())
+	elseif action_id == hash("key-n") and action.pressed then
+		load_emitter(self, emitters.emitter_angle_bounce())
+	elseif action_id == hash("key-o") and action.pressed then
+		load_emitter(self, emitters.emitter_rotate_to_direction())
+	elseif action_id == hash("key-p") and action.pressed then
+		load_emitter(self, emitters.emitter_velocity_adjust())
+	elseif action_id == hash("key-q") and action.pressed then
+		load_emitter(self, emitters.emitter_gravity_xy())
+	elseif action_id == hash("key-r") and action.pressed then
+		load_emitter(self, emitters.emitter_update_per_frame())
+	elseif action_id == hash("key-s") and action.pressed then
+		load_emitter(self, emitters.emitter_update_transition())
+	elseif action_id == hash("key-t") and action.pressed then
+		load_emitter(self, emitters.emitter_update_physics())
+	elseif action_id == hash("key-u") and action.pressed then
+		load_emitter(self, emitters.emitter_flame())
+	elseif action_id == hash("key-v") and action.pressed then
+		load_emitter(self, emitters.emitter_aurora())
+	end
+end

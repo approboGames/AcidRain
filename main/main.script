@@ -1,0 +1,43 @@
+-- profiler.enable_ui(true)
+
+function init(self)
+	math.randomseed(os.time())
+	math.random(); math.random(); math.random()
+
+	self.cur_collection = "default_example"
+
+	msg.post("/main#default_example", "load")
+	msg.post(".", "acquire_input_focus")
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("proxy_loaded") then
+        msg.post(sender, "init")
+        msg.post(sender, "enable")
+	end
+
+    if message_id == hash("proxy_unloaded") then
+		if self.cur_collection == "default_example" then
+			msg.post("/main#default_example", "load")
+		elseif self.cur_collection == "advanced_example" then
+			msg.post("/main#advanced_example", "load")
+		end
+    end
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("key-space") and action.pressed then
+		if self.cur_collection == "default_example" then
+			-- msg.post(".", "release_input_focus")
+			msg.post("/main#default_example", "disable")
+			msg.post("/main#default_example", "final")
+			msg.post("/main#default_example", "unload")
+			self.cur_collection = "advanced_example"
+		elseif self.cur_collection == "advanced_example" then
+			msg.post("/main#advanced_example", "disable")
+			msg.post("/main#advanced_example", "final")
+			msg.post("/main#advanced_example", "unload")
+			self.cur_collection = "default_example"
+		end
+	end
+end

@@ -1,0 +1,156 @@
+key_trigger {
+  input: KEY_ENTER
+  action: "key-enter"
+}
+key_trigger {
+  input: KEY_0
+  action: "key-0"
+}
+key_trigger {
+  input: KEY_1
+  action: "key-1"
+}
+key_trigger {
+  input: KEY_2
+  action: "key-2"
+}
+key_trigger {
+  input: KEY_3
+  action: "key-3"
+}
+key_trigger {
+  input: KEY_4
+  action: "key-4"
+}
+key_trigger {
+  input: KEY_5
+  action: "key-5"
+}
+key_trigger {
+  input: KEY_6
+  action: "key-6"
+}
+key_trigger {
+  input: KEY_7
+  action: "key-7"
+}
+key_trigger {
+  input: KEY_8
+  action: "key-8"
+}
+key_trigger {
+  input: KEY_9
+  action: "key-9"
+}
+key_trigger {
+  input: KEY_A
+  action: "key-a"
+}
+key_trigger {
+  input: KEY_B
+  action: "key-b"
+}
+key_trigger {
+  input: KEY_C
+  action: "key-c"
+}
+key_trigger {
+  input: KEY_D
+  action: "key-d"
+}
+key_trigger {
+  input: KEY_E
+  action: "key-e"
+}
+key_trigger {
+  input: KEY_F
+  action: "key-f"
+}
+key_trigger {
+  input: KEY_G
+  action: "key-g"
+}
+key_trigger {
+  input: KEY_H
+  action: "key-h"
+}
+key_trigger {
+  input: KEY_I
+  action: "key-i"
+}
+key_trigger {
+  input: KEY_J
+  action: "key-j"
+}
+key_trigger {
+  input: KEY_K
+  action: "key-k"
+}
+key_trigger {
+  input: KEY_L
+  action: "key-l"
+}
+key_trigger {
+  input: KEY_M
+  action: "key-m"
+}
+key_trigger {
+  input: KEY_N
+  action: "key-n"
+}
+key_trigger {
+  input: KEY_O
+  action: "key-o"
+}
+key_trigger {
+  input: KEY_P
+  action: "key-p"
+}
+key_trigger {
+  input: KEY_Q
+  action: "key-q"
+}
+key_trigger {
+  input: KEY_R
+  action: "key-r"
+}
+key_trigger {
+  input: KEY_S
+  action: "key-s"
+}
+key_trigger {
+  input: KEY_T
+  action: "key-t"
+}
+key_trigger {
+  input: KEY_U
+  action: "key-u"
+}
+key_trigger {
+  input: KEY_V
+  action: "key-v"
+}
+key_trigger {
+  input: KEY_W
+  action: "key-w"
+}
+key_trigger {
+  input: KEY_X
+  action: "key-x"
+}
+key_trigger {
+  input: KEY_Y
+  action: "key-y"
+}
+key_trigger {
+  input: KEY_Z
+  action: "key-z"
+}
+key_trigger {
+  input: KEY_SPACE
+  action: "key-space"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_1
+  action: "touch"
+}

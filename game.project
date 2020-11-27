@@ -1,0 +1,22 @@
+[bootstrap]
+main_collection = /main/main.collectionc
+
+[script]
+shared_state = 1
+
+[display]
+width = 960
+height = 640
+
+[project]
+title = Acid Rain
+
+[physics]
+debug = 0
+gravity_y = -1000.0
+scale = 0.02
+allow_dynamic_transforms = 0
+
+[sprite]
+max_count = 1024
+
