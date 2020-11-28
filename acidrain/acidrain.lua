@@ -335,7 +335,7 @@ function M.create(config)
 		end
 	end
 
-	-- Angles
+	-- Angles precalculate
 	AR.calculate_angles = function()
 		for i = 1, #AR.movement.angle do
 			if type(AR.movement.angle[i]) == "table" then
@@ -354,7 +354,7 @@ function M.create(config)
 		end
 	end
 
-	-- local velocities = {}
+	-- Velocities precalculate
 	AR.calculate_velocities = function()
 		for i = 1, #AR.movement.velocity do
 			if type(AR.movement.velocity[i]) == "table" then
