@@ -20,3 +20,5 @@ allow_dynamic_transforms = 0
 [sprite]
 max_count = 1024
 
+[library]
+include_dirs = acidrain
